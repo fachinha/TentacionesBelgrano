@@ -33,29 +33,21 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Brand Name */}
+          {/* Logo Oficial de Tentaciones */}
           <a
             href="#inicio"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise rounded-lg"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise rounded-xl"
+            aria-label="Ir al inicio de Tentaciones Fiambrería"
           >
             <img
-              src="/logo.svg"
-              alt="Tentaciones Fiambrería Bariloche"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-              onError={(e) => {
-                // Fallback in case SVG fails to render
-                e.currentTarget.style.display = 'none';
-              }}
+              src="/logo-teal-badge.jpg"
+              alt="Tentaciones Quesos & Fiambres Bariloche"
+              className="h-10 sm:h-12 w-auto object-contain rounded-xl shadow-sm border border-brand-warm-dark/80 transition-transform duration-200 group-hover:scale-[1.02]"
             />
-            <div className="flex flex-col">
-              <span className="font-serif text-2xl font-bold tracking-tight text-brand-bordo group-hover:text-brand-bordo-light transition-colors leading-none">
-                Tentaciones
-              </span>
-              <span className="text-[11px] font-semibold tracking-wider uppercase text-brand-turquoise-dark mt-1 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-brand-turquoise" />
-                Bariloche
-              </span>
-            </div>
+            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold tracking-wider uppercase text-brand-bordo bg-brand-warm px-2.5 py-1 rounded-full border border-brand-warm-dark/70">
+              <MapPin className="w-3 h-3 text-brand-turquoise" />
+              Bariloche
+            </span>
           </a>
 
           {/* Desktop Navigation Links */}

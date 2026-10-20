@@ -21,10 +21,17 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 lg:pt-18 text-white">
         <div className="max-w-3xl">
           
-          {/* Location & Specialty Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-turquoise text-xs font-semibold uppercase tracking-wider mb-6 animate-in fade-in duration-500">
-            <MapPin className="w-3.5 h-3.5 text-brand-turquoise" />
-            <span>Av. Belgrano 69 · San Carlos de Bariloche</span>
+          {/* Logo Oficial y Badge */}
+          <div className="flex flex-wrap items-center gap-3.5 mb-6">
+            <img
+              src="/logo-teal-badge.jpg"
+              alt="Tentaciones - Quesos & Fiambres Bariloche"
+              className="h-11 sm:h-14 w-auto object-contain rounded-xl shadow-xl border border-white/20 backdrop-blur-md"
+            />
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-turquoise text-xs font-semibold uppercase tracking-wider">
+              <MapPin className="w-3.5 h-3.5 text-brand-turquoise" />
+              <span>Av. Belgrano 69 · San Carlos de Bariloche</span>
+            </div>
           </div>
 
           {/* Suggested Official Title */}

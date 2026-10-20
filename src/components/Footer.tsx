@@ -19,13 +19,10 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/logo.svg"
-                alt="Tentaciones"
-                className="h-10 w-auto brightness-0 invert"
+                src="/logo-teal-badge.jpg"
+                alt="Tentaciones - Quesos & Fiambres Bariloche"
+                className="h-12 w-auto object-contain rounded-xl shadow-md border border-brand-bordo-light"
               />
-              <span className="font-serif text-2xl font-bold text-white tracking-wide">
-                Tentaciones
-              </span>
             </div>
 
             <p className="text-sm text-brand-warm/80 leading-relaxed max-w-sm">

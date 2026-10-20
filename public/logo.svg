@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="turquoiseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#42C6BE" />
+      <stop offset="100%" stop-color="#208F89" />
+    </linearGradient>
+    <linearGradient id="bordoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#522632" />
+      <stop offset="100%" stop-color="#35151F" />
+    </linearGradient>
+  </defs>
+
+  <!-- Emblem Icon -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Shield / Circle -->
+    <rect x="5" y="5" width="90" height="90" rx="24" fill="url(#bordoGrad)" stroke="#42C6BE" stroke-width="2.5" />
+    
+    <!-- Inner Accent Ring -->
+    <circle cx="50" cy="50" r="34" fill="none" stroke="#FAF7F2" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.6"/>
+    
+    <!-- Stylized Gourmet Cheese Wedge & Cold Cut Cut Silhouette -->
+    <!-- Stylized Cheese Wedge -->
+    <path d="M 33 58 L 65 38 L 67 62 Z" fill="#42C6BE" opacity="0.95" />
+    <!-- Holes in Cheese -->
+    <circle cx="48" cy="52" r="3" fill="#35151F" />
+    <circle cx="58" cy="48" r="2.2" fill="#35151F" />
+    <circle cx="41" cy="56" r="1.8" fill="#35151F" />
+    
+    <!-- Ribbon / Wave below representing charcuterie curve -->
+    <path d="M 30 68 C 42 63, 58 73, 70 66" fill="none" stroke="#FAF7F2" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Small star accents -->
+    <circle cx="50" cy="24" r="2" fill="#42C6BE" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(125, 22)">
+    <!-- Main Name -->
+    <text x="0" y="44" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" fill="#35151F" letter-spacing="1">
+      Tentaciones
+    </text>
+    
+    <!-- Turquoise Dot Accent -->
+    <circle cx="265" cy="40" r="4.5" fill="#42C6BE" />
+
+    <!-- Subtitle / Tagline -->
+    <text x="2" y="68" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#208F89" letter-spacing="3.5">
+      FIAMBRERÍA &amp; QUESOS GOURMET
+    </text>
+
+    <!-- Location pill tag -->
+    <text x="2" y="85" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#522632" letter-spacing="1.5">
+      BARILOCHE · PATAGONIA
+    </text>
+  </g>
+</svg>

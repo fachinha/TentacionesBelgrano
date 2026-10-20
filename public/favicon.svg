@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favBordo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#522632" />
+      <stop offset="100%" stop-color="#35151F" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#favBordo)" stroke="#42C6BE" stroke-width="2" />
+  <!-- Elegant T monogram with turquoise accent -->
+  <text x="32" y="44" font-family="'Playfair Display', Georgia, serif" font-size="38" font-weight="700" fill="#FAF7F2" text-anchor="middle">
+    T
+  </text>
+  <circle cx="44" cy="22" r="4" fill="#42C6BE" />
+</svg>

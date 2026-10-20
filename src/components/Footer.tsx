@@ -9,11 +9,11 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#03332D] text-brand-warm pt-16 pb-12 border-t border-[#09665C]/40 relative">
+    <footer className="bg-[#09665C] text-white pt-16 pb-12 border-t border-[#054840] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#09665C]/30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/20">
           
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
@@ -123,9 +123,9 @@ export const Footer: React.FC = () => {
                 href={BUSINESS_INFO.uberEatsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 text-xs text-brand-warm/90 hover:text-white bg-white/5 hover:bg-white/10 px-3.5 py-2 rounded-xl transition-colors"
+                className="inline-flex items-center gap-2.5 text-xs text-white/90 hover:text-white bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-xl transition-colors border border-white/15"
               >
-                <ShoppingBag className="w-4 h-4 text-brand-turquoise" />
+                <ShoppingBag className="w-4 h-4 text-brand-cream" />
                 <span>Tienda Oficial Uber Eats</span>
               </a>
             </div>
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-warm/60">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <p>
             &copy; {new Date().getFullYear()} Tentaciones Fiambrería. Todos los derechos reservados.
           </p>
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
             type="button"
             onClick={scrollToTop}
             aria-label="Volver al inicio"
-            className="p-2 rounded-full bg-white/10 hover:bg-brand-turquoise hover:text-brand-bordo text-white transition-colors"
+            className="p-2 rounded-full bg-white/15 hover:bg-brand-cream hover:text-brand-dark text-white transition-colors"
           >
             <ArrowUp className="w-4 h-4" />
           </button>

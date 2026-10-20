@@ -21,14 +21,7 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 lg:pt-18 text-white">
         <div className="max-w-3xl">
           
-          {/* Logo Oficial destacado */}
-          <div className="mb-6">
-            <img
-              src="/logo-teal-badge.jpg"
-              alt="Tentaciones - Quesos & Fiambres"
-              className="h-12 sm:h-16 w-auto object-contain rounded-2xl shadow-2xl border border-brand-cream/30 backdrop-blur-md"
-            />
-          </div>
+
 
           {/* Official Title with Cream Accent from Logo */}
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">

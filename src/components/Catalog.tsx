@@ -6,32 +6,36 @@ import { ProductCategory, Product } from '../types';
 import { ProductCard } from './ProductCard';
 import { getGeneralWhatsAppUrl } from '../utils/formatters';
 
-export const Catalog: React.FC = () => {
+interface CatalogProps {
+  products?: Product[];
+}
+
+export const Catalog: React.FC<CatalogProps> = ({ products = PRODUCTS }) => {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('todos');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Calculate count per category
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
-      todos: PRODUCTS.length,
+      todos: products.length,
       quesos: 0,
       fiambres: 0,
       ahumados: 0,
       bebidas: 0,
     };
 
-    PRODUCTS.forEach((p) => {
+    products.forEach((p) => {
       if (counts[p.category] !== undefined) {
         counts[p.category]++;
       }
     });
 
     return counts;
-  }, []);
+  }, [products]);
 
   // Filter products based on category and search query
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((product: Product) => {
+    return products.filter((product: Product) => {
       // Category match
       const matchesCategory =
         selectedCategory === 'todos' || product.category === selectedCategory;

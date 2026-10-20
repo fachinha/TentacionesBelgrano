@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, ShoppingBag } from 'lucide-react';
+import { Menu, X, MessageCircle, ShoppingBag, Lock } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/businessInfo';
 import { getGeneralWhatsAppUrl } from '../utils/formatters';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenAdmin?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenAdmin }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -79,10 +83,34 @@ export const Header: React.FC = () => {
               <ShoppingBag className="w-3.5 h-3.5 text-brand-teal-dark" />
               <span>Hacer un pedido</span>
             </a>
+
+            {onOpenAdmin && (
+              <button
+                type="button"
+                onClick={onOpenAdmin}
+                className="p-2 text-white/80 hover:text-brand-cream hover:bg-white/15 rounded-full border border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream"
+                title="Acceso Administración (PIN)"
+                aria-label="Panel de Administración"
+              >
+                <Lock className="w-4 h-4" />
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <div className="flex md:hidden items-center gap-2">
+            {onOpenAdmin && (
+              <button
+                type="button"
+                onClick={onOpenAdmin}
+                className="p-2 text-white/80 hover:text-brand-cream bg-white/10 rounded-full border border-white/20"
+                aria-label="Acceso Administración"
+                title="Administración"
+              >
+                <Lock className="w-4 h-4" />
+              </button>
+            )}
+
             <a
               href={getGeneralWhatsAppUrl()}
               target="_blank"
@@ -143,6 +171,20 @@ export const Header: React.FC = () => {
                 <ShoppingBag className="w-5 h-5 text-brand-teal-dark" />
                 <span>Ver tienda en Uber Eats</span>
               </a>
+
+              {onOpenAdmin && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAdmin();
+                  }}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-xs uppercase tracking-wider font-bold text-brand-cream bg-white/10 hover:bg-white/20 rounded-xl border border-brand-cream/30 transition-colors mt-1"
+                >
+                  <Lock className="w-4 h-4" />
+                  <span>Panel de Administración</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

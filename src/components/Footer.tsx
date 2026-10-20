@@ -1,9 +1,14 @@
-import { MapPin, MessageCircle, ShoppingBag, ArrowUp } from 'lucide-react';
+import React from 'react';
+import { MapPin, MessageCircle, ShoppingBag, ArrowUp, Lock } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { BUSINESS_INFO } from '../data/businessInfo';
 import { getGeneralWhatsAppUrl } from '../utils/formatters';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -135,9 +140,22 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
-          <p>
-            &copy; {new Date().getFullYear()} Tentaciones Fiambrería. Todos los derechos reservados.
-          </p>
+          <div className="flex items-center gap-4">
+            <p>
+              &copy; {new Date().getFullYear()} Tentaciones Fiambrería. Todos los derechos reservados.
+            </p>
+            {onOpenAdmin && (
+              <button
+                type="button"
+                onClick={onOpenAdmin}
+                className="inline-flex items-center gap-1.5 text-white/50 hover:text-brand-cream transition-colors text-[11px] underline-offset-2 hover:underline"
+                title="Acceso exclusivo administración"
+              >
+                <Lock className="w-3 h-3" />
+                <span>Administración</span>
+              </button>
+            )}
+          </div>
 
           <p className="text-[11px] text-center sm:text-right max-w-md">
             Información comercial y catálogo de referencia basados en los canales públicos de Uber Eats, WhatsApp y Google Maps.

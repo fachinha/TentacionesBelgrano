@@ -1,7 +1,7 @@
 import React from 'react';
-import { MapPin, MessageCircle, ShoppingBag, ArrowUp, Lock } from 'lucide-react';
+import { MapPin, MessageCircle, ShoppingBag, ArrowUp, Lock, Star, ExternalLink } from 'lucide-react';
 import { InstagramIcon } from './Icons';
-import { BUSINESS_INFO } from '../data/businessInfo';
+import { BUSINESS_INFO, SISTER_STORES } from '../data/businessInfo';
 import { getGeneralWhatsAppUrl } from '../utils/formatters';
 
 interface FooterProps {
@@ -136,6 +136,126 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             </div>
           </div>
 
+        </div>
+
+        {/* Nuestros Otros Locales en Bariloche */}
+        <div className="py-8 border-b border-white/20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-cream animate-pulse" />
+              <h3 className="text-xs uppercase tracking-[0.25em] text-brand-cream font-bold">
+                Nuestros Otros Locales en Bariloche
+              </h3>
+            </div>
+            <p className="text-xs text-brand-warm/80">
+              Negocios gastronómicos de nuestra familia comercial en el centro de Bariloche.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {SISTER_STORES.map((store) => (
+              <div
+                key={store.name}
+                className="bg-[#054840]/80 hover:bg-[#054840] p-4 sm:p-5 rounded-2xl border border-brand-cream/25 hover:border-brand-cream/50 transition-all space-y-3 shadow-md"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
+                      {store.name}
+                    </h4>
+                    <span className="text-[11px] text-brand-cream font-medium">
+                      {store.subtitle}
+                    </span>
+                  </div>
+                  {store.websiteUrl && (
+                    <a
+                      href={store.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-cream/20 hover:bg-brand-cream text-brand-cream hover:text-[#03332D] text-[10px] uppercase tracking-wider font-bold transition-colors"
+                      title={`Visitar web de ${store.name}`}
+                    >
+                      <span>Web</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+
+                {store.description && (
+                  <p className="text-xs text-brand-warm/85 leading-relaxed">
+                    {store.description}
+                  </p>
+                )}
+
+                <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                  {store.whatsappUrl && (
+                    <a
+                      href={store.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#03332D] hover:bg-[#25D366] text-white hover:text-white border border-white/10 hover:border-[#25D366] text-xs font-semibold transition-colors"
+                      title={`WhatsApp ${store.name}`}
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                      <span>WhatsApp</span>
+                    </a>
+                  )}
+
+                  {store.uberEatsUrl && (
+                    <a
+                      href={store.uberEatsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#03332D] hover:bg-white hover:text-brand-dark text-white border border-white/10 hover:border-white text-xs font-semibold transition-colors"
+                      title={`Pedir por Uber Eats en ${store.name}`}
+                    >
+                      <ShoppingBag className="w-3.5 h-3.5 text-brand-cream" />
+                      <span>Uber Eats</span>
+                    </a>
+                  )}
+
+                  {store.instagramUrl && (
+                    <a
+                      href={store.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#03332D] hover:bg-[#E1306C] text-white border border-white/10 hover:border-[#E1306C] text-xs font-semibold transition-colors"
+                      title={`Instagram ${store.name}`}
+                    >
+                      <InstagramIcon className="w-3.5 h-3.5 text-pink-300" />
+                      <span>Instagram</span>
+                    </a>
+                  )}
+
+                  {store.googleMapsUrl && (
+                    <a
+                      href={store.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#03332D] hover:bg-brand-cream hover:text-brand-dark text-white border border-white/10 hover:border-brand-cream text-xs font-semibold transition-colors"
+                      title={`Ubicación de ${store.name}`}
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-brand-cream" />
+                      <span>Ubicación</span>
+                    </a>
+                  )}
+
+                  {store.googleReviewsUrl && (
+                    <a
+                      href={store.googleReviewsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#03332D] hover:bg-amber-400 hover:text-black text-white border border-white/10 hover:border-amber-400 text-xs font-semibold transition-colors"
+                      title={`Dejar opinión para ${store.name}`}
+                    >
+                      <Star className="w-3.5 h-3.5 text-amber-300" />
+                      <span>Opiniones</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -36,3 +36,16 @@ export interface BusinessContactInfo {
   googleMapsUrl: string;
   googleMapsEmbedUrl: string;
 }
+
+export interface SisterStore {
+  name: string;
+  subtitle: string;
+  description?: string;
+  whatsappUrl?: string;
+  instagramUrl?: string;
+  uberEatsUrl?: string;
+  googleMapsUrl?: string;
+  googleReviewsUrl?: string;
+  websiteUrl?: string;
+  phoneDisplay?: string;
+}

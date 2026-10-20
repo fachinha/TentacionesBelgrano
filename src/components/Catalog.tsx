@@ -64,7 +64,7 @@ export const Catalog: React.FC = () => {
             Catálogo de Productos
           </h2>
           <p className="mt-3.5 text-base sm:text-lg text-brand-muted leading-relaxed">
-            Quesos de diversas maduraciones, fiambres de primera línea y especialidades patagónicas. Precios de referencia tomados de nuestro menú de Uber Eats.
+            Quesos de diversas maduraciones, fiambres de primera línea y especialidades patagónicas. Hacé tu pedido directo en <strong>Uber Eats</strong> con entrega rápida en Bariloche o consultanos disponibilidad.
           </p>
         </div>
 

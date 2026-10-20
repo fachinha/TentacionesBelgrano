@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { MessageCircle, Info, Tag, Scale } from 'lucide-react';
+import { ShoppingBag, ExternalLink, MessageCircle, Info, Tag, Scale } from 'lucide-react';
 import { Product } from '../types';
+import { BUSINESS_INFO } from '../data/businessInfo';
 import { formatCurrency, getProductWhatsAppUrl } from '../utils/formatters';
 
 interface ProductCardProps {
@@ -25,8 +26,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       
       {/* Top Part: Image & Badges */}
       <div>
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-brand-warm">
-          
+        <a
+          href={BUSINESS_INFO.uberEatsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`Pedir ${product.name} en Uber Eats`}
+          className="relative aspect-[4/3] w-full overflow-hidden bg-brand-warm block cursor-pointer"
+        >
           {/* Skeleton placeholder while loading */}
           {!imageLoaded && !imageError && (
             <div className="absolute inset-0 bg-brand-warm-dark/50 animate-pulse" />
@@ -70,13 +76,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               {product.presentation}
             </span>
           </div>
-        </div>
+        </a>
 
         {/* Content Section */}
         <div className="p-4 sm:p-5">
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-bordo group-hover:text-brand-bordo-light transition-colors leading-snug">
-            {product.name}
-          </h3>
+          <a
+            href={BUSINESS_INFO.uberEatsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Pedir ${product.name} en Uber Eats`}
+            className="block"
+          >
+            <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-bordo group-hover:text-brand-bordo-light transition-colors leading-snug">
+              {product.name}
+            </h3>
+          </a>
 
           {product.description && (
             <p className="text-xs sm:text-sm text-brand-muted mt-2 line-clamp-2 leading-relaxed">
@@ -111,16 +125,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </span>
         </div>
 
-        <a
-          href={getProductWhatsAppUrl(product.name, product.presentation, product.price)}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Consultar por ${product.name} por WhatsApp`}
-          className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-turquoise hover:bg-brand-turquoise-dark shadow-sm hover:shadow transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise"
-        >
-          <MessageCircle className="w-4 h-4" />
-          <span>Consultar por WhatsApp</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={BUSINESS_INFO.uberEatsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Pedir ${product.name} en Uber Eats`}
+            className="flex-1 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-turquoise hover:bg-brand-turquoise-dark shadow-sm hover:shadow transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise"
+          >
+            <ShoppingBag className="w-4 h-4" />
+            <span>Pedir en Uber Eats</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+          </a>
+
+          <a
+            href={getProductWhatsAppUrl(product.name, product.presentation, product.price)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Consultar por ${product.name} por WhatsApp`}
+            title="Consultar por WhatsApp"
+            className="inline-flex items-center justify-center p-2.5 rounded-xl text-brand-bordo hover:text-white bg-brand-warm hover:bg-[#25D366] border border-brand-warm-dark/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise"
+          >
+            <MessageCircle className="w-4 h-4" />
+          </a>
+        </div>
       </div>
 
     </article>

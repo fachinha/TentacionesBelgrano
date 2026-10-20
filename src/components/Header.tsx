@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, ShoppingBag, MapPin } from 'lucide-react';
+import { Menu, X, MessageCircle, ShoppingBag } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/businessInfo';
 import { getGeneralWhatsAppUrl } from '../utils/formatters';
 
@@ -36,18 +36,14 @@ export const Header: React.FC = () => {
           {/* Logo Oficial de Tentaciones */}
           <a
             href="#inicio"
-            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise rounded-xl"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-turquoise rounded-xl"
             aria-label="Ir al inicio de Tentaciones Fiambrería"
           >
             <img
               src="/logo-teal-badge.jpg"
-              alt="Tentaciones Quesos & Fiambres Bariloche"
+              alt="Tentaciones - Quesos & Fiambres"
               className="h-10 sm:h-12 w-auto object-contain rounded-xl shadow-sm border border-brand-warm-dark/80 transition-transform duration-200 group-hover:scale-[1.02]"
             />
-            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold tracking-wider uppercase text-brand-bordo bg-brand-warm px-2.5 py-1 rounded-full border border-brand-warm-dark/70">
-              <MapPin className="w-3 h-3 text-brand-turquoise" />
-              Bariloche
-            </span>
           </a>
 
           {/* Desktop Navigation Links */}

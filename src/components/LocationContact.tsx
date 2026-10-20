@@ -50,9 +50,9 @@ export const LocationContact: React.FC = () => {
                   href={BUSINESS_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-bordo hover:bg-brand-bordo-light transition-all shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-brand-teal hover:bg-brand-teal-dark transition-all shadow-sm"
                 >
-                  <Navigation className="w-4 h-4 text-brand-turquoise" />
+                  <Navigation className="w-4 h-4 text-brand-cream" />
                   <span>Cómo llegar en Google Maps</span>
                 </a>
               </div>

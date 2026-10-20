@@ -9,19 +9,19 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-bordo text-brand-warm pt-16 pb-12 border-t border-brand-bordo-light relative">
+    <footer className="bg-[#03332D] text-brand-warm pt-16 pb-12 border-t border-[#09665C]/40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-brand-bordo-light/70">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#09665C]/30">
           
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <img
                 src="/logo-teal-badge.jpg"
-                alt="Tentaciones - Quesos & Fiambres Bariloche"
-                className="h-12 w-auto object-contain rounded-xl shadow-md border border-brand-bordo-light"
+                alt="Tentaciones - Quesos & Fiambres"
+                className="h-12 w-auto object-contain rounded-xl shadow-md border border-brand-cream/20"
               />
             </div>
 
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
               Fiambrería y quesería especializada en San Carlos de Bariloche. Pequeños placeres, grandes sabores para tus picadas y encuentros.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-brand-turquoise font-medium">
+            <div className="flex items-center gap-2 text-xs text-brand-cream font-medium">
               <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
               <span>{BUSINESS_INFO.address}, San Carlos de Bariloche</span>
             </div>
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider text-xs">
+            <h4 className="font-serif text-base font-bold text-brand-cream uppercase tracking-wider text-xs">
               Navegación
             </h4>
             <ul className="space-y-2 text-sm text-brand-warm/80">
@@ -66,27 +66,27 @@ export const Footer: React.FC = () => {
 
           {/* Categories Links */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider text-xs">
+            <h4 className="font-serif text-base font-bold text-brand-cream uppercase tracking-wider text-xs">
               Especialidades
             </h4>
             <ul className="space-y-2 text-sm text-brand-warm/80">
               <li>
-                <a href="#catalogo" className="hover:text-brand-turquoise transition-colors">
+                <a href="#catalogo" className="hover:text-brand-cream transition-colors">
                   Quesos Tradicionales
                 </a>
               </li>
               <li>
-                <a href="#catalogo" className="hover:text-brand-turquoise transition-colors">
+                <a href="#catalogo" className="hover:text-brand-cream transition-colors">
                   Fiambres Seleccionados
                 </a>
               </li>
               <li>
-                <a href="#catalogo" className="hover:text-brand-turquoise transition-colors">
+                <a href="#catalogo" className="hover:text-brand-cream transition-colors">
                   Trucha Ahumada
                 </a>
               </li>
               <li>
-                <a href="#catalogo" className="hover:text-brand-turquoise transition-colors">
+                <a href="#catalogo" className="hover:text-brand-cream transition-colors">
                   Bebidas &amp; Jugos
                 </a>
               </li>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
 
           {/* Official Channels */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider text-xs">
+            <h4 className="font-serif text-base font-bold text-brand-cream uppercase tracking-wider text-xs">
               Canales Oficiales
             </h4>
             <div className="flex flex-col space-y-2.5">

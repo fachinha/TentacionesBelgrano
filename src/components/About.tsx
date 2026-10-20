@@ -21,9 +21,9 @@ export const About: React.FC = () => {
               </div>
 
               {/* Inset floating badge */}
-              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-brand-bordo text-white p-5 rounded-2xl shadow-xl border-2 border-brand-warm max-w-xs">
-                <div className="flex items-center gap-2 text-brand-turquoise text-xs font-bold uppercase tracking-wider mb-1">
-                  <Sparkles className="w-4 h-4" />
+              <div className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-brand-teal-deep text-white p-5 rounded-2xl shadow-xl border-2 border-brand-cream/40 max-w-xs">
+                <div className="flex items-center gap-2 text-brand-cream text-xs font-bold uppercase tracking-wider mb-1">
+                  <Sparkles className="w-4 h-4 text-brand-cream" />
                   <span>Calidad Garantizada</span>
                 </div>
                 <p className="text-xs text-brand-warm leading-snug">
@@ -35,12 +35,12 @@ export const About: React.FC = () => {
 
           {/* Text Content */}
           <div className="lg:col-span-7 order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-turquoise/15 text-brand-turquoise-dark text-xs font-bold uppercase tracking-wider mb-4">
-              <HeartHandshake className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-brand-teal text-xs font-bold uppercase tracking-wider mb-4">
+              <HeartHandshake className="w-3.5 h-3.5 text-brand-teal" />
               <span>Nuestra Propuesta</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-bordo tracking-tight leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-teal-deep tracking-tight leading-tight">
               Especialistas en quesos, fiambres y sabores que inspiran encuentros.
             </h2>
 

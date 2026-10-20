@@ -57,13 +57,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           {/* Badges Container */}
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-            <span className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-bordo/90 text-white backdrop-blur-md shadow-sm">
+            <span className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full bg-brand-teal-deep/90 text-brand-cream border border-brand-cream/30 backdrop-blur-md shadow-sm">
               {categoryLabels[product.category] || product.category}
             </span>
 
             {product.badge && (
-              <span className="px-2.5 py-1 text-[11px] font-bold rounded-full bg-brand-turquoise text-brand-bordo backdrop-blur-md shadow-sm flex items-center gap-1">
-                <Tag className="w-3 h-3" />
+              <span className="px-2.5 py-1 text-[11px] font-bold rounded-full bg-brand-cream text-brand-dark backdrop-blur-md shadow-sm flex items-center gap-1">
+                <Tag className="w-3 h-3 text-brand-teal-dark" />
                 {product.badge}
               </span>
             )}

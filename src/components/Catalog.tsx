@@ -109,15 +109,15 @@ export const Catalog: React.FC = () => {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-brand-bordo text-white shadow-md shadow-brand-bordo/20'
-                      : 'bg-white text-brand-dark hover:text-brand-bordo hover:bg-brand-warm border border-brand-warm-dark/80'
+                      ? 'bg-brand-teal text-white shadow-md shadow-brand-teal/25 ring-2 ring-brand-cream/40'
+                      : 'bg-white text-brand-dark hover:text-brand-teal hover:bg-brand-warm border border-brand-warm-dark/80'
                   }`}
                 >
                   <span>{cat.label}</span>
                   <span
                     className={`px-2 py-0.5 text-[11px] rounded-full font-bold ${
                       isActive
-                        ? 'bg-brand-turquoise text-brand-bordo'
+                        ? 'bg-brand-cream text-brand-dark'
                         : 'bg-brand-warm text-brand-muted'
                     }`}
                   >
@@ -194,26 +194,26 @@ export const Catalog: React.FC = () => {
         )}
 
         {/* Uber Eats Delivery Banner */}
-        <div className="mt-14 sm:mt-16 bg-gradient-to-r from-brand-bordo to-brand-bordo-light rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl relative overflow-hidden">
+        <div className="mt-14 sm:mt-16 bg-gradient-to-r from-brand-teal-deep via-brand-teal-dark to-brand-teal rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl relative overflow-hidden border border-brand-teal/30">
           <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-turquoise/20 text-brand-turquoise text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cream/20 text-brand-cream text-xs font-bold uppercase tracking-wider mb-4 border border-brand-cream/30">
               <ShoppingBag className="w-3.5 h-3.5" />
               Delivery disponible en Bariloche
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-3">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-3 text-white">
               ¿Preferís recibir tu pedido en tu casa?
             </h3>
-            <p className="text-sm sm:text-base text-brand-warm/90 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-brand-cream-light/95 leading-relaxed mb-6">
               Pedí tus quesos y fiambres favoritos directamente desde nuestra tienda oficial en <strong>Uber Eats</strong> con entrega a domicilio rápida y segura.
             </p>
             <a
               href={BUSINESS_INFO.uberEatsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs uppercase font-bold tracking-wider text-brand-bordo bg-brand-turquoise hover:bg-brand-turquoise-light transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs uppercase font-bold tracking-wider text-brand-dark bg-brand-cream hover:bg-brand-cream-light transition-all shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span>Abrir tienda en Uber Eats</span>
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4 text-brand-teal-dark" />
             </a>
           </div>
 

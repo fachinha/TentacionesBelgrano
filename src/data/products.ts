@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Clásico',
     description: 'Queso en barra de pasta uniforme y sabor suave. Feteado fresco en el momento.',
-    image: 'https://images.unsplash.com/photo-1624806992066-5ffcf7ca186b?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-barra-feteado.jpg',
   },
   {
     id: 'queso-barra-serenisima',
@@ -140,7 +140,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Especial',
     description: 'Queso barra condimentado con mix aromático de hierbas finas.',
-    image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-barra-hierbas.jpg',
   },
   {
     id: 'queso-barra-albahaca',
@@ -151,7 +151,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Especial',
     description: 'Frescura mediterránea con notas aromáticas de albahaca seleccionada.',
-    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-barra-albahaca.jpg',
   },
   {
     id: 'queso-muzzarella',
@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Calidad Extra',
     description: 'Corte magro y delicado, textura suave y bajo contenido de sodio.',
-    image: 'https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jamon-cocido.jpg',
   },
   {
     id: 'jamon-cocido-cagnoli',
@@ -198,7 +198,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Tandil Tradición',
     description: 'Elaboración tradicional de Tandil, cocción lenta y aroma artesanal inconfundible.',
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jamon-cocido.jpg',
   },
   {
     id: 'jamon-natural-millenium',
@@ -242,7 +242,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Exclusivo',
     description: 'Pieza noble curada con humo de maderas nativas y suave pimentón.',
-    image: 'https://images.unsplash.com/photo-1514944298352-dfb8dfba4a52?auto=format&fit=crop&w=700&q=80',
+    image: '/products/lomo-curado.jpg',
   },
   {
     id: 'salame-milan-campo-austral',
@@ -253,7 +253,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Picado Fino',
     description: 'Picado milanés balanceado, pimienta en grano y feteado ultrafino.',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80',
+    image: '/products/salame-milan.jpg',
   },
   {
     id: 'bondiola',
@@ -275,7 +275,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'unidad',
     badge: 'Artesanal',
     description: 'Pieza entera embutida en tripa natural, estacionamiento tradicional al aire de montaña.',
-    image: 'https://images.unsplash.com/photo-1628268909376-e8c44bb3065f?auto=format&fit=crop&w=700&q=80',
+    image: '/products/salamin-artesanal.jpg',
   },
   {
     id: 'salamin-picado-grueso',
@@ -297,7 +297,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Hierbas Finas',
     description: 'Costra exterior de hierbas seleccionadas y ahumado suave en frío.',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80',
+    image: '/products/lomo-curado.jpg',
   },
   {
     id: 'mortadela',
@@ -308,7 +308,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Clásica',
     description: 'Embutido cocido suave con toques especiados, feteado fino ideal para sanguchería.',
-    image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80',
+    image: '/products/mortadela.jpg',
   },
 
   // --- PRODUCTOS AHUMADOS ---
@@ -334,7 +334,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'litro',
     badge: '100% Valle',
     description: 'Jugo natural de manzana de los valles rionegrinos, sin azúcares agregados.',
-    image: 'https://images.unsplash.com/photo-1576186726580-a816e8b12896?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jugo-sol-manzana.jpg',
   },
   {
     id: 'jugo-sol-fruta-naranja',
@@ -345,6 +345,6 @@ export const PRODUCTS: Product[] = [
     unitType: 'litro',
     badge: 'Cítrico Natural',
     description: 'Puro jugo exprimido pasteurizado, dulzor natural y frescura cítrica.',
-    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jugo-sol-naranja.jpg',
   },
 ];

@@ -77,7 +77,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAdmin }) => {
             </a>
 
             <a
-              href="#catalogo"
+              href={BUSINESS_INFO.uberEatsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs uppercase tracking-wider font-bold text-brand-dark bg-brand-cream hover:bg-brand-cream-light shadow-md hover:shadow-lg transition-all rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <ShoppingBag className="w-3.5 h-3.5 text-brand-teal-dark" />

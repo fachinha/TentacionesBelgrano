@@ -1,5 +1,18 @@
-import React, { useState, useId, useRef } from 'react';
+import React, { useState, useId, useRef, useEffect } from 'react';
 import type { Product, ProductUnitType } from '../types';
+
+async function computeSha256(str: string): Promise<string> {
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(str));
+  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+function formatCountdown(ms: number) {
+  const totalSec = Math.max(0, Math.ceil(ms / 1000));
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+}
 import {
   X,
   Lock,
@@ -35,9 +48,77 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Security Gate State
+  const ADMIN_TARGET_HASH = '329b4995cf805dd0567b922ea7b19b92dfb7a44be13651671c497ca3f6eb18b0'; // GusYLucas2026!
+  const MAX_ATTEMPTS = 3;
+  const LOCKOUT_MS = 10 * 60 * 1000;
+  const ATTEMPTS_KEY = 'tentaciones_admin_attempts';
+  const LOCKOUT_KEY = 'tentaciones_admin_locked_until';
+
   const [pin, setPin] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [pinError, setPinError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [remainingTime, setRemainingTime] = useState<number>(0);
+  const [isLocked, setIsLocked] = useState(false);
+
+  useEffect(() => {
+    const checkLockout = () => {
+      const lockedUntil = parseInt(localStorage.getItem(LOCKOUT_KEY) || '0', 10);
+      const diff = lockedUntil - Date.now();
+      if (diff > 0) {
+        setIsLocked(true);
+        setRemainingTime(diff);
+      } else {
+        setIsLocked(false);
+        setRemainingTime(0);
+        if (lockedUntil > 0) {
+          localStorage.removeItem(ATTEMPTS_KEY);
+          localStorage.removeItem(LOCKOUT_KEY);
+        }
+      }
+    };
+
+    checkLockout();
+    const interval = setInterval(checkLockout, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePinSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isLocked) return;
+
+    const trimmed = pin.trim();
+    if (!trimmed) {
+      setErrorMessage('Por favor ingresá la contraseña.');
+      return;
+    }
+
+    try {
+      const hash = await computeSha256(trimmed);
+      if (hash === ADMIN_TARGET_HASH) {
+        setIsAuthenticated(true);
+        setErrorMessage(null);
+        localStorage.removeItem(ATTEMPTS_KEY);
+        localStorage.removeItem(LOCKOUT_KEY);
+      } else {
+        const attempts = parseInt(localStorage.getItem(ATTEMPTS_KEY) || '0', 10) + 1;
+        localStorage.setItem(ATTEMPTS_KEY, attempts.toString());
+        setPin('');
+
+        if (attempts >= MAX_ATTEMPTS) {
+          const lockUntil = Date.now() + LOCKOUT_MS;
+          localStorage.setItem(LOCKOUT_KEY, lockUntil.toString());
+          setIsLocked(true);
+          setRemainingTime(LOCKOUT_MS);
+          setErrorMessage(null);
+        } else {
+          const left = MAX_ATTEMPTS - attempts;
+          setErrorMessage(`Contraseña incorrecta. Te queda${left === 1 ? ' 1 intento.' : `n ${left} intentos.`}`);
+        }
+      }
+    } catch (err) {
+      setErrorMessage('Error al verificar la contraseña.');
+    }
+  };
 
   // Active Tab: 'edit' | 'add' | 'settings'
   const [activeTab, setActiveTab] = useState<'edit' | 'add' | 'settings'>('edit');
@@ -62,17 +143,6 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
   const showNotification = (msg: string) => {
     setNotification(msg);
     setTimeout(() => setNotification(null), 3000);
-  };
-
-  const handlePinSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const cleanPin = pin.trim().toLowerCase();
-    if (cleanPin === '1234' || cleanPin === 'tentaciones' || cleanPin === 'admin') {
-      setIsAuthenticated(true);
-      setPinError(false);
-    } else {
-      setPinError(true);
-    }
   };
 
   const handlePriceChange = (id: string, newPrice: number) => {
@@ -270,38 +340,43 @@ export const AdminPanelModal: React.FC<AdminPanelModalProps> = ({
             <form onSubmit={handlePinSubmit} className="w-full space-y-4">
               <div>
                 <label htmlFor={pinInputId} className="sr-only">
-                  PIN de seguridad
+                  Contraseña de seguridad
                 </label>
                 <input
                   id={pinInputId}
                   type="password"
-                  maxLength={12}
+                  maxLength={32}
+                  disabled={isLocked}
                   value={pin}
                   onChange={(e) => setPin(e.target.value)}
-                  placeholder="Ingresá el PIN (ej: 1234)"
-                  className="w-full text-center tracking-widest text-lg font-mono px-4 py-3 bg-[#02241F] border border-brand-cream/40 rounded-xl focus:outline-none focus:border-brand-cream text-white placeholder-white/40"
+                  placeholder="Ingresá la contraseña"
+                  className="w-full text-center tracking-widest text-lg font-mono px-4 py-3 bg-[#02241F] border border-brand-cream/40 rounded-xl focus:outline-none focus:border-brand-cream text-white placeholder-white/40 disabled:opacity-50 disabled:cursor-not-allowed"
                   autoFocus
                 />
               </div>
 
-              {pinError && (
-                <div className="flex items-center justify-center gap-1.5 text-xs text-rose-300">
-                  <AlertCircle className="w-3.5 h-3.5" />
-                  <span>PIN incorrecto. Probá con <strong>1234</strong>.</span>
+              {isLocked ? (
+                <div className="p-3 bg-rose-950/60 border border-rose-500/40 rounded-xl text-center text-xs text-rose-200">
+                  <p className="font-semibold mb-1">⚠️ Acceso bloqueado por seguridad</p>
+                  <p>Superaste los {MAX_ATTEMPTS} intentos. Podrás reintentar en: <strong>{formatCountdown(remainingTime)}</strong></p>
                 </div>
+              ) : (
+                errorMessage && (
+                  <div className="flex items-center justify-center gap-1.5 text-xs text-rose-300">
+                    <AlertCircle className="w-3.5 h-3.5" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )
               )}
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-brand-cream hover:bg-brand-cream-light text-[#03332D] font-bold text-sm uppercase tracking-wider transition-all shadow-lg"
+                disabled={isLocked}
+                className="w-full py-3 rounded-xl bg-brand-cream hover:bg-brand-cream-light text-[#03332D] font-bold text-sm uppercase tracking-wider transition-all shadow-lg disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Ingresar al Panel
               </button>
             </form>
-
-            <p className="text-[11px] text-brand-warm/60 mt-6">
-              💡 <em>PIN de demostración: <strong>1234</strong></em>
-            </p>
           </div>
         ) : (
           /* Authenticated Dashboard */

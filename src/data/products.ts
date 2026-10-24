@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'trozo',
     badge: 'Campo',
     description: 'Sabor casero y textura compacta, ideal para acompañar con pan de campo o dulce.',
-    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-criollo.jpg',
   },
   {
     id: 'queso-sardo',
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'trozo',
     badge: 'Gourmet',
     description: 'Queso azul de vetas nobles, textura cremosa desgranable y sabor profundo.',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-azul.jpg',
   },
   {
     id: 'queso-pategras',
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'trozo',
     badge: 'Elegido',
     description: 'Corteza rojiza, textura firme y pasta suave de sabor láctico agradable.',
-    image: 'https://images.unsplash.com/photo-1549448937-b95c96328908?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-holanda.jpg',
   },
   {
     id: 'queso-parmesano',
@@ -118,7 +118,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'trozo',
     badge: 'Reserva',
     description: 'Queso de pasta extra dura, estacionamiento prolongado y cristales crocantes.',
-    image: 'https://images.unsplash.com/photo-1559561853-08451507cbe7?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-parmesano.jpg',
   },
   {
     id: 'queso-barra-ahumado',
@@ -129,7 +129,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Ahumado',
     description: 'Ahumado natural con maderas seleccionadas, perfecto para tostas y sándwiches especiales.',
-    image: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-barra-ahumado.jpg',
   },
   {
     id: 'queso-barra-hierbas',
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'trozo',
     badge: 'Fresco',
     description: 'Muzzarella de excelente hilado, cremosa y con el punto justo de sal.',
-    image: 'https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-muzzarella.jpg',
   },
   {
     id: 'queso-atuel',
@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Referencia',
     warningNotice: 'Nota: Precio publicado originalmente en Uber Eats ($1.400 / 200g). Recomendamos confirmar vigencia al momento del pedido.',
     description: 'Queso suave y agradable. Valor de referencia obtenido del catálogo publicado.',
-    image: 'https://images.unsplash.com/photo-1625085576340-a3594895690b?auto=format&fit=crop&w=700&q=80',
+    image: '/products/queso-atuel.jpg',
   },
 
   // --- FIAMBRES ---
@@ -198,7 +198,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Tandil Tradición',
     description: 'Elaboración tradicional de Tandil, cocción lenta y aroma artesanal inconfundible.',
-    image: '/products/jamon-cocido.jpg',
+    image: '/products/jamon-cocido-cagnoli.jpg',
   },
   {
     id: 'jamon-natural-millenium',
@@ -209,7 +209,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Natural',
     description: 'Jamón natural entero, carne magra seleccionada y sabor limpio al paladar.',
-    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jamon-natural.jpg',
   },
   {
     id: 'jamon-natural-bocatti',
@@ -220,7 +220,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Gourmet',
     description: 'Categoría superior, piezas de músculo entero con condimentos naturales finos.',
-    image: 'https://images.unsplash.com/photo-1528607929212-2636ec44253e?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jamon-natural-bocatti.jpg',
   },
   {
     id: 'jamon-crudo-espuna',
@@ -231,7 +231,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'feteado',
     badge: 'Premium',
     description: 'Curado al estilo español con estacionamiento paciente, grasa dulce y notas intensas.',
-    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=700&q=80',
+    image: '/products/jamon-crudo.jpg',
   },
   {
     id: 'lomo-iberico-ahumado',
@@ -286,7 +286,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'unidad',
     badge: 'Artesanal',
     description: 'Sabor rústico de campo con dados visibles de tocino y vino tinto.',
-    image: 'https://images.unsplash.com/photo-1592686092916-3e75e7a9b08a?auto=format&fit=crop&w=700&q=80',
+    image: '/products/salamin-picado-grueso.jpg',
   },
   {
     id: 'lomo-ahumado-hierbas-bocatti',
@@ -321,7 +321,7 @@ export const PRODUCTS: Product[] = [
     unitType: 'envasado',
     badge: 'Patagonia Especial',
     description: 'Especialidad patagónica de Bariloche. Trucha de aguas cordilleranas curada y ahumada con maderas de la región.',
-    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80',
+    image: '/products/trucha-ahumada.jpg',
   },
 
   // --- BEBIDAS ---

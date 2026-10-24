@@ -10,13 +10,14 @@ import { AdminPanelModal } from './components/AdminPanelModal';
 import { PRODUCTS } from './data/products';
 import type { Product } from './types';
 
-const STORAGE_KEY = 'tentaciones_catalog_data_v2';
+const STORAGE_KEY = 'tentaciones_catalog_data_v3';
 
 export const App: React.FC = () => {
   const [products, setProducts] = useState<Product[]>(() => {
     try {
       // Limpiar datos legados de versiones anteriores para no arrastrar fotos erróneas
       localStorage.removeItem('tentaciones_catalog_data');
+      localStorage.removeItem('tentaciones_catalog_data_v2');
 
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {

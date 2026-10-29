@@ -259,8 +259,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
-          <div className="flex items-center gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-center md:text-left">
             <p>
               &copy; {new Date().getFullYear()} Tentaciones Fiambrería. Todos los derechos reservados.
             </p>
@@ -277,18 +277,36 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             )}
           </div>
 
-          <p className="text-[11px] text-center sm:text-right max-w-md">
-            Información comercial y catálogo de referencia basados en los canales públicos de Uber Eats, WhatsApp y Google Maps.
-          </p>
+          {/* Crédito Kiur Code */}
+          <div className="flex items-center gap-1.5 text-xs py-1 px-3 rounded-full bg-black/15 border border-white/10">
+            <span className="text-white/80">Desarrollo por</span>
+            <a
+              href="https://kiurcode.pages.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold text-brand-cream hover:text-white transition-colors underline-offset-2 hover:underline"
+              title="Visitar Kiur Code"
+            >
+              <span>Kiur Code</span>
+              <ExternalLink className="w-3 h-3 opacity-80" />
+            </a>
+          </div>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
-            aria-label="Volver al inicio"
-            className="p-2 rounded-full bg-white/15 hover:bg-brand-cream hover:text-brand-dark text-white transition-colors"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </button>
+          <div className="flex items-center justify-center md:justify-end gap-3 w-full md:w-auto">
+            <p className="text-[11px] text-center md:text-right max-w-xs text-white/60">
+              Información comercial y catálogo de referencia.
+            </p>
+
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Volver al inicio"
+              className="p-2 rounded-full bg-white/15 hover:bg-brand-cream hover:text-[#09665C] text-white transition-colors flex-shrink-0"
+              title="Volver arriba"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
       </div>
